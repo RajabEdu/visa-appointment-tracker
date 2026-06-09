@@ -141,7 +141,8 @@ export default abstract class Workflow<
 
     return {
       headless: true,
-      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+      args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
+      executablePath: process.env.CHROMIUM_PATH || '/app/.apt/usr/bin/chromium-browser',
     };
   }
 
