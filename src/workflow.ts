@@ -132,7 +132,7 @@ export default abstract class Workflow<
   }
 
   private buildBrowserOptions(): any {
-  if (this.config.env === Env.DEVELOPMENT) {
+  if (this.config.env === Env.DEVELOPMENT && !process.env.BROWSERLESS_API_KEY) {
     return {
       headless: false,
       defaultViewport: { width: 1024, height: 768 },
