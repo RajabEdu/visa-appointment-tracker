@@ -1,0 +1,1 @@
+const puppeteer = require('puppeteer'); const token = process.env.BROWSERLESS_API_KEY; puppeteer.connect({browserWSEndpoint:'wss://chrome.browserless.io?token='+token}).then(async(b)=>{console.log('Connected');const p=await b.newPage();await p.goto('https://example.com');console.log('Title:',await p.title());await b.close()}).catch(e=>console.log('Error:',e.message));
