@@ -7,12 +7,12 @@
   "license": "MIT",
   "private": true,
   "engines": {
-    "node": "20.x"
+    "node": "22.x"
   },
   "scripts": {
     "serve": "NODE_ENV=development nodemon --watch './' --exec 'ts-node -r tsconfig-paths/register --files ./src/bin/cron.ts' -e ts",
     "start": "pm2-runtime start ./dist/bin/cron.js --env production",
-    "build": "ttsc"
+    "build": "tspc"
   },
   "devDependencies": {
     "@types/lodash.merge": "^4.6.7",
