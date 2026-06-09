@@ -6,8 +6,11 @@
     "experimentalDecorators": true,
     "outDir": "./dist",
     "baseUrl": "./",
+    "strict": false,
+   "noImplicitAny": false,
     "paths": {
       "@/*": ["./src/*"]
+      
     },
     "plugins": [
       { "transform": "typescript-transform-paths" },
