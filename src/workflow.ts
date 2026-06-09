@@ -45,10 +45,10 @@ export default abstract class Workflow<
 
   async retryableExecute(): Promise<void> {
     try {
-      this.executionState.init();
+      this.executionState.init(); console.log("ENV:", this.config.env, "KEY:", !!process.env.BROWSERLESS_API_KEY);
       this.logger.debug('Initializing workflow...');
 
-      const page = await this.getOrBuildPage();
+      const page = await this.getOrBuildPage().catch(e => { console.log("BROWSER ERROR:", e.message); throw e; });
       const commands = this.buildCommands({
         logger: this.logger,
         page,
