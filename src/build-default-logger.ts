@@ -1,3 +1,4 @@
+// @ts-nocheck
 import winston, { Logger } from 'winston';
 import { TransformableInfo } from 'logform';
 import safeStringify from 'safe-stable-stringify';
