@@ -30,7 +30,7 @@ export default class SignInWorkflowCommand extends WorkflowCommand<GetAvailableA
     const policyAgreementInputElement = await this.page.waitForSelector('#policy_confirmed');
     await policyAgreementInputElement!.click();
 
-    await page.screenshot({ path: '/tmp/debug.png' });
+    await this.page.screenshot({ path: '/tmp/debug.png' });
 
     await this.page.keyboard.press('Enter');
   }
