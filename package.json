@@ -10,6 +10,7 @@
     "node": "22.x"
   },
   "scripts": {
+    "prepare": "ts-patch install -s",
     "serve": "NODE_ENV=development nodemon --watch './' --exec 'ts-node -r tsconfig-paths/register --files ./src/bin/cron.ts' -e ts",
     "start": "pm2-runtime start ./dist/bin/cron.js --env production",
     "build": "tspc"
