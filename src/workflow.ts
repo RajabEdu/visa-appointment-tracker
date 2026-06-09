@@ -137,7 +137,6 @@ export default abstract class Workflow<
       browserWSEndpoint: `wss://chrome.browserless.io?token=${process.env.BROWSERLESS_API_KEY}`,
     };
   }
-
   return {
     headless: false,
     defaultViewport: { width: 1024, height: 768 },
