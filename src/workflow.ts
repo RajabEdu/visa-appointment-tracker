@@ -132,19 +132,17 @@ export default abstract class Workflow<
   }
 
   private buildBrowserOptions(): any {
-    if (this.config.env === Env.DEVELOPMENT) {
-      return {
-        headless: false,
-        defaultViewport: { width: 1024, height: 768 },
-      };
-    }
-
+  if (this.config.env === Env.DEVELOPMENT) {
     return {
-      headless: true,
-      args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
-      executablePath: process.env.CHROMIUM_PATH || '/app/.apt/usr/bin/chromium-browser',
+      headless: false,
+      defaultViewport: { width: 1024, height: 768 },
     };
   }
+
+  return {
+    browserWSEndpoint: `wss://chrome.browserless.io?token=${process.env.BROWSERLESS_API_KEY}`,
+  };
+}
 
   private async destroyPage(): Promise<void> {
     if (!this.page) {
