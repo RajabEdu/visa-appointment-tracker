@@ -1,20 +1,20 @@
 {
   "compilerOptions": {
-    "strict": true,
+    "strict": false,
+    "noImplicitAny": false,
     "declaration": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "outDir": "./dist",
     "baseUrl": "./",
-    "strict": false,
-   "noImplicitAny": false,
+    "target": "ES2019",
+    "module": "commonjs",
     "paths": {
       "@/*": ["./src/*"]
-      
     },
     "plugins": [
       { "transform": "typescript-transform-paths" },
       { "transform": "typescript-transform-paths", "afterDeclarations": true }
-    ],
+    ]
   }
 }
