@@ -132,15 +132,18 @@ export default abstract class Workflow<
   }
 
   private buildBrowserOptions(): any {
+<<<<<<< HEAD
   if (this.config.env === Env.DEVELOPMENT && !process.env.BROWSERLESS_API_KEY) {
+=======
+  if (process.env.BROWSERLESS_API_KEY) {
+>>>>>>> d8a6373c943372aec562c42de85c80094d42785b
     return {
-      headless: false,
-      defaultViewport: { width: 1024, height: 768 },
+      browserWSEndpoint: `wss://chrome.browserless.io?token=${process.env.BROWSERLESS_API_KEY}`,
     };
   }
-
   return {
-    browserWSEndpoint: `wss://chrome.browserless.io?token=${process.env.BROWSERLESS_API_KEY}`,
+    headless: false,
+    defaultViewport: { width: 1024, height: 768 },
   };
 }
 
